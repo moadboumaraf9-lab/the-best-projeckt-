@@ -1,0 +1,1844 @@
+/* =======================================================
+   ومن الصداقة... وُلد الحب
+   Style.css
+   ======================================================= */
+
+/* ===========================
+   استيراد الخطوط
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap');
+
+/* ===========================
+   المتغيرات
+=========================== */
+
+:root{
+
+    --black:#090909;
+
+    --dark:#141414;
+
+    --brown:#5b3b1d;
+
+    --gold:#c7a86d;
+
+    --beige:#efe4d0;
+
+    --paper:#f7f1e6;
+
+    --white:#ffffff;
+
+    --shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+/* ===========================
+   إعادة الضبط
+=========================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    direction:rtl;
+
+    overflow-x:hidden;
+
+    background:var(--black);
+
+    color:var(--beige);
+
+    font-family:"Amiri",serif;
+
+    line-height:2;
+
+}
+
+/* ===========================
+   تحديد النص
+=========================== */
+
+::selection{
+
+    background:var(--gold);
+
+    color:#000;
+
+}
+
+/* ===========================
+   شريط التمرير
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#101010;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+
+        var(--gold),
+
+        var(--brown)
+
+    );
+
+    border-radius:20px;
+
+}
+
+/* ===========================
+   الخلفية
+=========================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-999;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(circle at top,
+
+    #202545,
+
+    #0a0a0a 65%);
+
+}
+
+/* ===========================
+   النجوم
+=========================== */
+
+#stars{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.star{
+
+    position:absolute;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:twinkle infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.2;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.4);
+
+    }
+
+}
+
+/* ===========================
+   السديم
+=========================== */
+
+#nebula{
+
+    position:absolute;
+
+    width:900px;
+
+    height:900px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(140,80,255,.18),
+
+    transparent 70%
+
+    );
+
+    top:-250px;
+
+    left:-200px;
+
+    filter:blur(90px);
+
+    animation:nebulaMove 25s linear infinite;
+
+}
+
+@keyframes nebulaMove{
+
+    50%{
+
+        transform:
+
+        translate(120px,80px)
+
+        rotate(180deg);
+
+    }
+
+}
+/* ===========================
+   القمر
+=========================== */
+
+#moon{
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    top:70px;
+
+    right:8%;
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    #fff9df,
+
+    #fff0b7 55%,
+
+    #d8c38b
+
+    );
+
+    box-shadow:
+
+    0 0 50px rgba(255,240,180,.8),
+
+    0 0 120px rgba(255,240,180,.25);
+
+    animation:
+
+    moonFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes moonFloat{
+
+    50%{
+
+        transform:
+
+        translateY(-12px);
+
+    }
+
+}
+
+/* ===========================
+   شاشة البداية
+=========================== */
+
+#intro{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+.intro-card{
+
+    width:min(900px,95%);
+
+    padding:70px 60px;
+
+    border-radius:30px;
+
+    background:
+
+    rgba(15,15,15,.45);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    animation:
+
+    fadeUp 1.5s ease;
+
+}
+
+.intro-card h1{
+
+    font-family:
+
+    "Aref Ruqaa",serif;
+
+    font-size:4rem;
+
+    color:var(--gold);
+
+    margin-bottom:35px;
+
+    line-height:1.5;
+
+}
+
+.intro-card p{
+
+    font-size:1.4rem;
+
+    color:var(--beige);
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/* ===========================
+   الزر
+=========================== */
+
+#startButton{
+
+    margin-top:50px;
+
+    padding:18px 50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+
+    font-family:"Amiri";
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    var(--gold),
+
+    var(--brown)
+
+    );
+
+    color:white;
+
+    transition:.4s;
+
+}
+
+#startBook:hover{
+
+    transform:
+
+    translateY(-6px)
+    scale(1.04);
+
+    box-shadow:
+
+    0 20px 45px rgba(199,168,109,.35);
+
+}
+
+/* ===========================
+   الكتاب
+=========================== */
+
+#book{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+/* ===========================
+   الصفحات
+=========================== */
+
+.page{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:90px 20px;
+
+}
+
+/* ===========================
+   الورقة
+=========================== */
+
+.paper{
+
+    width:min(900px,95%);
+
+    min-height:550px;
+
+    background:var(--paper);
+
+    color:#35230d;
+
+    border-radius:18px;
+
+    padding:70px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.45);
+
+}
+
+/* تأثير الورق */
+
+.paper::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+
+    transparent,
+
+    transparent 33px,
+
+    rgba(0,0,0,.03) 34px
+
+    );
+
+    pointer-events:none;
+
+}
+
+.paper h2{
+
+    text-align:center;
+
+    font-size:2.6rem;
+
+    color:var(--brown);
+
+    margin-bottom:25px;
+
+    font-family:"Aref Ruqaa";
+
+}
+
+.paper h3{
+
+    text-align:center;
+
+    color:#8b6236;
+
+    margin-bottom:35px;
+
+    font-size:1.8rem;
+
+}
+
+.paper p{
+
+    font-size:1.45rem;
+
+    line-height:2.4;
+
+}
+/* ===========================
+   ظهور الصفحات
+=========================== */
+
+.page{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+
+}
+
+.page.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ===========================
+   أغلفة الفصول
+=========================== */
+
+.chapterCover{
+
+    width:100%;
+
+    min-height:70vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:80px 20px;
+
+}
+
+.chapterBox{
+
+    width:min(900px,95%);
+
+    padding:70px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:rgba(20,20,20,.45);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.chapterBox span{
+
+    color:var(--gold);
+
+    letter-spacing:3px;
+
+    font-size:1.1rem;
+
+}
+
+.chapterBox h1{
+
+    margin:25px 0;
+
+    color:var(--gold);
+
+    font-size:3.3rem;
+
+    font-family:"Aref Ruqaa",serif;
+
+}
+
+.chapterBox p{
+
+    color:var(--beige);
+
+    line-height:2.2;
+
+    font-size:1.3rem;
+
+}
+
+/* ===========================
+   القصائد
+=========================== */
+
+.poem{
+
+    background:linear-gradient(
+        to bottom,
+        #fcf7ee,
+        #f3eadb
+    );
+
+    border-right:8px solid var(--gold);
+
+}
+
+.poem p{
+
+    text-align:center;
+
+    font-family:"Aref Ruqaa",serif;
+
+    color:#57371d;
+
+    line-height:2.8;
+
+    font-size:1.6rem;
+
+}
+
+/* ===========================
+   الكتابة التدريجية
+=========================== */
+
+.typing{
+
+    white-space:pre-line;
+
+}
+
+/* ===========================
+   الشهب
+=========================== */
+
+#shooting-stars{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.meteor{
+
+    position:absolute;
+
+    width:3px;
+
+    height:130px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+
+        white,
+
+        transparent
+
+    );
+
+    transform:rotate(45deg);
+
+    animation:meteorMove linear forwards;
+
+}
+
+@keyframes meteorMove{
+
+    from{
+
+        opacity:1;
+
+        transform:
+            translate(0,0)
+            rotate(45deg);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+            translate(-900px,700px)
+            rotate(45deg);
+
+    }
+
+}
+
+/* ===========================
+   سماء النجوم
+=========================== */
+
+#nightSky{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+#nightSky h1{
+
+    font-size:5rem;
+
+    color:white;
+
+}
+
+#nightSky p{
+
+    color:var(--beige);
+
+    font-size:1.3rem;
+
+    margin:30px 0 60px;
+
+}
+
+/* ===========================
+   النجوم التفاعلية
+=========================== */
+
+#constellation{
+
+    position:relative;
+
+    width:900px;
+
+    max-width:95vw;
+
+    height:500px;
+
+}
+
+.memory-star{
+
+    position:absolute;
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 15px white,
+        0 0 30px rgba(255,255,255,.6);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.memory-star:hover{
+
+    transform:scale(1.7);
+
+    box-shadow:
+        0 0 20px white,
+        0 0 40px gold;
+
+}
+
+/* أماكن النجوم */
+
+#star1{
+
+    top:18%;
+
+    left:20%;
+
+}
+
+#star2{
+
+    top:30%;
+
+    left:68%;
+
+}
+
+#star3{
+
+    top:60%;
+
+    left:12%;
+
+}
+
+#star4{
+
+    top:70%;
+
+    left:55%;
+
+}
+
+#star5{
+
+    top:45%;
+
+    left:40%;
+
+}
+
+#star6{
+
+    top:12%;
+
+    left:82%;
+
+}
+
+/* ===========================
+   نافذة الرسائل
+=========================== */
+
+#memoryWindow{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.75);
+
+    z-index:999;
+
+}
+
+.memoryCard{
+
+    width:min(650px,90%);
+
+    background:var(--paper);
+
+    color:#35230d;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+
+}
+
+.memoryCard h2{
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+
+}
+
+.memoryCard button{
+
+    margin-top:35px;
+
+    padding:14px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    background:var(--gold);
+
+    color:white;
+
+    font-family:"Amiri",serif;
+
+    transition:.3s;
+
+}
+
+.memoryCard button:hover{
+
+    transform:translateY(-4px);
+
+}
+/* ===========================
+   غرفة الزمن
+=========================== */
+
+#timeRoom{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+.hourglass{
+
+    font-size:7rem;
+
+    animation:float 4s ease-in-out infinite;
+
+    filter:drop-shadow(0 0 20px rgba(255,220,120,.5));
+
+}
+
+#loveTimer{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:40px 0;
+
+    font-size:2rem;
+
+    color:var(--gold);
+
+    font-family:"Aref Ruqaa",serif;
+
+}
+
+.timerText{
+
+    max-width:700px;
+
+    color:var(--beige);
+
+    font-size:1.3rem;
+
+    line-height:2.3;
+
+}
+
+/* ===========================
+   الذكريات
+=========================== */
+
+#memoryMoments{
+
+    padding:100px 20px;
+
+}
+
+#memoryMoments h2{
+
+    text-align:center;
+
+    color:var(--gold);
+
+    margin-bottom:60px;
+
+    font-size:2.8rem;
+
+}
+
+.moments{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:35px;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.moment{
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.moment:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.moment{
+
+    font-size:1.2rem;
+
+}
+
+.moment p{
+
+    margin-top:18px;
+
+    color:var(--beige);
+
+    line-height:2;
+
+}
+
+/* ===========================
+   شجرة الأمنيات
+=========================== */
+
+#wishTreeSection{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:80px 20px;
+
+}
+
+#wishTree{
+
+    position:relative;
+
+    width:700px;
+
+    height:700px;
+
+    max-width:95vw;
+
+    border-radius:50%;
+
+}
+
+.leaf{
+
+    position:absolute;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    user-select:none;
+
+}
+
+.leaf:hover{
+
+    transform:
+
+        scale(1.4)
+
+        rotate(-10deg);
+
+}
+
+/* أماكن الأوراق */
+
+#leaf1{top:15%;left:40%;}
+#leaf2{top:22%;left:58%;}
+#leaf3{top:32%;left:28%;}
+#leaf4{top:35%;left:68%;}
+#leaf5{top:46%;left:18%;}
+#leaf6{top:48%;left:48%;}
+#leaf7{top:52%;left:75%;}
+#leaf8{top:64%;left:30%;}
+#leaf9{top:68%;left:58%;}
+#leaf10{top:22%;left:18%;}
+#leaf11{top:58%;left:12%;}
+#leaf12{top:75%;left:45%;}
+
+/* ===========================
+   نافذة الأمنية
+=========================== */
+
+#wishWindow{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.8);
+
+    z-index:1000;
+
+}
+
+.wishCard{
+
+    width:min(650px,90%);
+
+    padding:45px;
+
+    background:var(--paper);
+
+    color:#3b2815;
+
+    border-radius:20px;
+
+    text-align:center;
+
+}
+
+.wishCard h2{
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+
+}
+
+.wishCard button{
+
+    margin-top:30px;
+
+    padding:14px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:var(--gold);
+
+    color:white;
+
+    cursor:pointer;
+
+}
+/* ===========================
+   مرصد النجوم
+=========================== */
+
+#observatory{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:100px 20px;
+
+}
+
+#skyMap{
+
+    position:relative;
+
+    width:900px;
+
+    max-width:95vw;
+
+    height:650px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
+
+}
+
+/* ===========================
+   الكواكب
+=========================== */
+
+.planet{
+
+    position:absolute;
+
+    font-size:3rem;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    user-select:none;
+
+    animation:floatPlanet 6s ease-in-out infinite;
+
+}
+
+.planet:hover{
+
+    transform:scale(1.2);
+
+    filter:drop-shadow(0 0 15px gold);
+
+}
+
+.moon{
+
+    top:15%;
+
+    left:12%;
+
+}
+
+.saturn{
+
+    top:28%;
+
+    right:18%;
+
+}
+
+.star{
+
+    top:60%;
+
+    left:25%;
+
+}
+
+.comet{
+
+    top:68%;
+
+    right:25%;
+
+}
+
+.galaxy{
+
+    top:42%;
+
+    left:48%;
+
+}
+
+@keyframes floatPlanet{
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+/* ===========================
+   نافذة الكوكب
+=========================== */
+
+#planetWindow{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.82);
+
+    z-index:9999;
+
+}
+
+.planetCard{
+
+    width:min(700px,92%);
+
+    padding:45px;
+
+    background:var(--paper);
+
+    color:#392511;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
+
+}
+
+.planetCard h2{
+
+    color:var(--brown);
+
+    margin-bottom:25px;
+
+}
+
+.planetCard button{
+
+    margin-top:35px;
+
+    padding:14px 38px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:var(--gold);
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+/* ===========================
+   صندوق الرسائل
+=========================== */
+
+#lettersRoom{
+
+    padding:100px 20px;
+
+}
+
+#lettersRoom h2{
+
+    text-align:center;
+
+    color:var(--gold);
+
+    margin:40px 0;
+
+    font-size:2.7rem;
+
+}
+
+#mailBox{
+
+    text-align:center;
+
+    font-size:5rem;
+
+    margin-bottom:40px;
+
+}
+
+.lettersGrid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:30px;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.mail{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.mail:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.mail span{
+
+    display:block;
+
+    margin-top:18px;
+
+    color:var(--beige);
+
+    line-height:2;
+
+}
+
+/* ===========================
+   نافذة الرسائل
+=========================== */
+
+#mailWindow{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.82);
+
+    z-index:9999;
+
+}
+
+.mailCard{
+
+    width:min(700px,92%);
+
+    background:var(--paper);
+
+    color:#35230d;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    text-align:center;
+
+}
+
+.mailCard button{
+
+    margin-top:35px;
+
+    padding:14px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:var(--gold);
+
+    color:white;
+
+    cursor:pointer;
+
+}
+/* ===========================
+   ألبوم الذكريات
+=========================== */
+
+#album{
+
+    padding:100px 20px;
+
+}
+
+.albumGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:35px;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.memoryCard{
+
+    perspective:1200px;
+
+    height:320px;
+
+    cursor:pointer;
+
+}
+
+.memoryCard .front,
+.memoryCard .back{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:20px;
+
+    backface-visibility:hidden;
+
+    transition:transform .8s;
+
+    padding:30px;
+
+}
+
+.memoryCard .front{
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    font-size:4rem;
+
+}
+
+.memoryCard .back{
+
+    background:var(--paper);
+
+    color:#3d2812;
+
+    transform:rotateY(180deg);
+
+    text-align:center;
+
+    line-height:2;
+
+}
+
+.memoryCard{
+
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    transition:transform .8s;
+
+}
+
+.memoryCard.flip{
+
+    transform:rotateY(180deg);
+
+}
+
+/* ===========================
+   النهاية
+=========================== */
+
+#bookEnding{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:100px 20px;
+
+}
+
+.endingCard{
+
+    width:min(900px,95%);
+
+    text-align:center;
+
+    padding:70px;
+
+    border-radius:30px;
+
+    background:rgba(20,20,20,.45);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:var(--shadow);
+
+}
+
+.endingCard h1{
+
+    font-family:"Aref Ruqaa",serif;
+
+    font-size:3.5rem;
+
+    color:var(--gold);
+
+    line-height:1.7;
+
+}
+
+.endingCard p{
+
+    margin-top:35px;
+
+    font-size:1.4rem;
+
+    color:var(--beige);
+
+    line-height:2.3;
+
+}
+
+.endingStar{
+
+    margin-top:50px;
+
+    font-size:4rem;
+
+    animation:starGlow 2.5s infinite alternate;
+
+}
+
+@keyframes starGlow{
+
+    from{
+
+        transform:scale(1);
+
+        filter:drop-shadow(0 0 10px white);
+
+    }
+
+    to{
+
+        transform:scale(1.2);
+
+        filter:drop-shadow(0 0 30px gold);
+
+    }
+
+}
+
+/* ===========================
+   التذييل
+=========================== */
+
+footer{
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    color:#c7b79d;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer p{
+
+    margin:10px 0;
+
+}
+
+/* ===========================
+   الاستجابة
+=========================== */
+
+@media(max-width:900px){
+
+    .paper{
+
+        padding:40px 25px;
+
+    }
+
+    .chapterBox{
+
+        padding:45px 25px;
+
+    }
+
+    .chapterBox h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .paper h2{
+
+        font-size:2rem;
+
+    }
+
+    .paper p{
+
+        font-size:1.2rem;
+
+    }
+
+    #loveTimer{
+
+        font-size:1.5rem;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    #moon{
+
+        width:120px;
+
+        height:120px;
+
+    }
+
+    .chapterBox h1{
+
+        font-size:2rem;
+
+    }
+
+    .intro-card h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .paper{
+
+        min-height:auto;
+
+    }
+
+    .albumGrid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
