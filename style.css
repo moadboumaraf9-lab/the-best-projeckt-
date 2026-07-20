@@ -407,6 +407,8 @@ body{
 #book{
 
     width:100%;
+    max-width: 1200px;
+    margin: auto;
 
     display:flex;
 
@@ -1837,99 +1839,7 @@ footer p{
     }
 
 }
-/* ===========================================
-   تحسين الهاتف
-=========================================== */
 
-@media (max-width:768px){
-
-body{
-
-    overflow-x:hidden;
-
-}
-
-.paper{
-
-    width:95%;
-
-    margin:auto;
-
-    padding:25px 18px;
-
-}
-
-.chapterBox{
-
-    width:95%;
-
-    padding:30px 18px;
-
-}
-
-.chapterBox h1{
-
-    font-size:2rem;
-
-}
-
-.paper h2{
-
-    font-size:1.7rem;
-
-}
-
-.paper p{
-
-    font-size:1rem;
-
-    line-height:2;
-
-}
-
-#wishTree{
-
-    width:330px;
-
-    height:330px;
-
-}
-
-#skyMap{
-
-    width:100%;
-
-    height:420px;
-
-}
-
-.memoryCard{
-
-    height:260px;
-
-}
-
-.albumGrid{
-
-    grid-template-columns:1fr;
-
-}
-
-.lettersGrid{
-
-    grid-template-columns:1fr;
-
-}
-
-#moon{
-
-    width:90px;
-
-    height:90px;
-
-}
-
-}
 /*==========================
       Polaroid Style
 ==========================*/
@@ -1988,46 +1898,73 @@ body{
 
 }
 /* ==========================
-   تحسين عرض الهاتف
+   MOBILE VERSION
 ========================== */
 
 @media (max-width:768px){
 
+    .paper,
+    .chapterBox{
+        width:95%;
+        margin:auto;
+        padding:20px;
+    }
+
+    .chapterBox h1{
+        font-size:2rem;
+    }
+
+    .paper h2{
+        font-size:1.6rem;
+    }
+
+    .paper p{
+        font-size:1rem;
+        line-height:2;
+    }
+
+    #wishTree{
+        width:300px;
+        height:300px;
+    }
+
+    #skyMap{
+        width:100%;
+        height:380px;
+    }
+
     .albumGrid{
-
         display:grid;
-
-        grid-template-columns:repeat(2,1fr);
-
-        gap:18px;
-
-        padding:15px;
-
+        grid-template-columns:1fr;
+        gap:25px;
+        width:100%;
+        padding:20px;
     }
 
     .memoryCard{
-
         width:100%;
-
-        height:250px;
-
+        max-width:340px;
+        height:430px;
+        margin:auto;
     }
 
     .polaroid{
-
         width:90%;
-
     }
 
     .polaroid img{
-
-        height:140px;
-
+        width:100%;
+        height:260px;
+        object-fit:cover;
     }
 
-}
-.memoryCard{
+    .lettersGrid{
+        grid-template-columns:1fr;
+    }
 
-    height:280px;
+    #moon{
+        width:90px;
+        height:90px;
+    }
 
 }
